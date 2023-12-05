@@ -27,8 +27,8 @@ class HomeView: UIView {
     
     private lazy var searchButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.backgroundColor = .tintColor
-        button.setTitle("Pesquisar", for: .normal)
+        button.backgroundColor = .systemBrown
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
@@ -110,7 +110,8 @@ extension HomeView {
             self.searchStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
             self.searchButton.widthAnchor.constraint(equalToConstant: 50),
-            
+            self.searchButton.heightAnchor.constraint(equalToConstant: 34),
+
             self.userProfileImage.topAnchor.constraint(equalTo: self.searchStackView.bottomAnchor, constant: 50),
             self.userProfileImage.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             self.userProfileImage.widthAnchor.constraint(equalToConstant: 150),
